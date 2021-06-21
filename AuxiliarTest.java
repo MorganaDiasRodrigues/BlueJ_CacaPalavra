@@ -40,11 +40,29 @@ public class AuxiliarTest
     }
 
     @Test
-    public void testePreencher()
+    public void testePreencherPrimeiraLinha()
     {
         String[] board;
         board = Auxiliar.preencher();
         assertEquals(6, board[0].length());
+        assertEquals(11, board.length);
+    }
+    
+    @Test
+    public void testePreencherSegundaLinha()
+    {
+        String[] board;
+        board = Auxiliar.preencher();
+        assertEquals(6, board[1].length());
+        assertEquals(11, board.length);
+    }
+    
+    @Test
+    public void testePreencherTerceiraLinha()
+    {
+        String[] board;
+        board = Auxiliar.preencher();
+        assertEquals(6, board[2].length());
         assertEquals(11, board.length);
     }
 }
