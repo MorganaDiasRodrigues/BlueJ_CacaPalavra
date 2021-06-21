@@ -45,8 +45,10 @@ public class Auxiliar
      * 
      * @param string[] board vetor de 10 posições criado para ser o quadro do caça-palavras
      */
-    public static void preencher(String[] board)
+    public static String[] preencher() // diferente de null
     {
+        String board[];
+        board = new String[11];
         board[0] = "FEUVBF";
         board[1] = "CLASSE";
         board[2] = "PIGHZW";
@@ -58,6 +60,7 @@ public class Auxiliar
         board[8] = "TEDJSL";
         board[9] = "METODO";
         board[10] = "JASCUV";
+        return board;
     }
 
     /**

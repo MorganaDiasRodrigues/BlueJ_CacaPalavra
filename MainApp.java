@@ -12,24 +12,24 @@ import java.util.Scanner;
  * <p> @date 18-06-2021
  * <p> @version 1.0
  */
-public class MainApp extends Auxiliar
+public class MainApp
 {
     public static void main(String[] args) {
         Scanner entrada;
         entrada = new Scanner(System.in);
         // chama o método para ditar as regras do jogo.
-        tutorial();
+        Auxiliar.tutorial();
         // variáveis 
         int jogada;
         int pontos;
         // vetor de 10 posições para criiar o quadro do jogo (board).
-        String resposta;String[] board;
-        board = new String[11];
+        String resposta;
+        String[] board;
         do 
         {
             // chama os métodos que preenchem o quadro com as palavras e letras.
-            preencher(board);
-            dump(board);
+            board = Auxiliar.preencher();
+            Auxiliar.dump(board);
             // pontos do jogador. Iniciam em zero. Cada jogada certa soma-se mais 1 na variável ponto.
             pontos = 0;
             do
@@ -39,7 +39,7 @@ public class MainApp extends Auxiliar
                 jogada = entrada.nextInt();
                 while(jogada < 0 || jogada > 10)
                 {
-                    jogada = verificador(jogada); // método para verificar se a entrada está no intervalo de 0 até 10 (número de linhas no quadro)
+                    jogada = Auxiliar.verificador(jogada); // método para verificar se a entrada está no intervalo de 0 até 10 (número de linhas no quadro)
                 }
                 // vetor com as linhas corretas do quadro. Estas são as linhas com as posições corretas das palavras.
                 int[] posicao = {1,3,5,6,9};
@@ -60,7 +60,7 @@ public class MainApp extends Auxiliar
                     System.out.println("_____________________________________________________");
                     pontos = pontos + 1;
                     board[jogada] = "******"; // substui a palavra achada por asteriscos "*".
-                    dump(board); // refaz o quadro, com os asteriscos.
+                    Auxiliar.dump(board); // refaz o quadro, com os asteriscos.
                 }
                 else // a variável acertou está com o valor false, ou seja, o jogador não acertou.
                 {

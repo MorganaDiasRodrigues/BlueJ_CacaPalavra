@@ -1,5 +1,4 @@
 
-
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -38,5 +37,14 @@ public class AuxiliarTest
     @AfterEach
     public void tearDown()
     {
+    }
+
+    @Test
+    public void testePreencher()
+    {
+        String[] board;
+        board = Auxiliar.preencher();
+        assertEquals(6, board[0].length());
+        assertEquals(11, board.length);
     }
 }
